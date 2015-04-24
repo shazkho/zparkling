@@ -2,23 +2,10 @@
 /**
  * @package sparkling
  */
- 
- // Custom code by George Shazkho
- $categories_list = get_the_category_list( __( ', ', 'sparkling' ) );
- if ( strpos( $categories_list, "Tutorial" ) !== false ) {
-	 $overlay_text = "Tutorial";
- } else if ( strpos( $categories_list, "Code snippet" ) !== false ) {
-	 $overlay_text = "Code Snippet";
- } else {
-	 $overlay_text = "Other";
- }
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="blog-item-wrap">
-				<div class="thumbnail_overlay">
-					<?php echo $overlay_text; ?>
-				</div>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 			 	<?php the_post_thumbnail( 'sparkling-featured', array( 'class' => 'single-featured' )); ?>
 			</a>
